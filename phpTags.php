@@ -2,12 +2,12 @@
 
 <head>
     <title>Escaping html Tags</title>
-    </head
+</head>
 
 <body>
-    <?php
     
+    <?php
+    // Escaping the html tags to write PHP code
     echo "Hello World";
-
     ?>
 </body>

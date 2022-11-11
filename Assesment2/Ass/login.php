@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <form action="action_page.php" style="border: 1px solid #ccc">
+    <form action="action_page.php" method="POST" style="border: 1px solid #ccc">
       <div class="container">
         <h1>Login</h1>
         <p>Please fill in this form to login to an account.</p>

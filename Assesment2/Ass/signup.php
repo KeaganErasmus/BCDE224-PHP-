@@ -3,37 +3,19 @@
  include('header.php');
  include_once('functions.php');
 
-
- if($_SERVER['REQUEST_METHOD'] == "POST"){
-   // something was posted
-   $email = $_POST['email'];
-   $password = $_POST['psw'];
-   $accType = $_POST['acc-type'];
-
-   if(!empty($email) && !empty($password) && $accType == 'Seller'){
-    // Save to DB
-    $user_id = randomNum(20);
-    $sql = "insert into Seller (sellerID, sellerFName, sellerLName, sellerEmail, productsListed) Values('$password', '', , '$email', )";
-
-    mysqli_query($conn, $sql);
-
-    //header("Location: login.php");
-    //die;
-   }else{
-    echo "please enter valid information";
-   }
- }
-
 ?>
 
 <!DOCTYPE html>
 <html>
   <body>
-    <form method="post" style="border: 1px solid #ccc">
+    <form action="" method="post" style="border: 1px solid #ccc">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr />
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uid" required />
 
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required />
@@ -71,7 +53,7 @@
 
         <div class="clearfix">
           <button type="button" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="submit" class="signupbtn" name="submit">Sign Up</button>
         </div>
       </div>
     </form>

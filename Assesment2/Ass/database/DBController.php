@@ -22,6 +22,7 @@ class DBController{
         $this->closeConnection();
     }
 
+
     // Close connection
     protected function closeConnection(){
         if ($this->conn != null){

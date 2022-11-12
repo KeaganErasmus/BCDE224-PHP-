@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <form action="" method="post" style="border: 1px solid #ccc">
+    <form action="includes/_signup-include.php" method="post" style="border: 1px solid #ccc">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -36,11 +36,6 @@
           required
         />
 
-        <label for="">Type of account</label>
-        <select id="acc-type" name="acc-type">
-          <option value="Seller">Seller</option>
-          <option value="Buyer">Buyer</option>
-        </select><br>
         <label>
           <input
             type="checkbox"

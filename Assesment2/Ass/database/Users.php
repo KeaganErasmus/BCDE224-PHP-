@@ -1,8 +1,7 @@
 <?php
 
-// Fetch product data
-
-class Product{
+// Fetch Users data
+class Users{
     public $db = null;
 
     public function __construct(DBController $db){
@@ -13,7 +12,7 @@ class Product{
         $this->db = $db; 
     }
 
-    public function getProductData($table = 'Product'){
+    public function getUsersData($table = 'Users'){
         $result = $this->db->conn->query("Select * from {$table}");
 
         $resultArray = array();

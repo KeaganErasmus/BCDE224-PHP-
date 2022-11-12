@@ -20,7 +20,5 @@
       <a href="index.php"><h1>Agora</h1></a>
       <ul>
         <li><a href="login.php">Login</a></li>
-        <li><a href="signup.php">Sign Up</a></li>
       </ul>
-    </header>
-
+  </header>

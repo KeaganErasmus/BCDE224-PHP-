@@ -7,7 +7,7 @@
  include_once('database/DBController.php');
 
 //  print_r($_SESSION);
- var_dump($_SESSION);
+//  var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

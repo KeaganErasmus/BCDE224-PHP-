@@ -24,7 +24,10 @@
       <ul>
         <li><a href="login.php">Login</a></li>
         <li><a href="logout.php">Logout</a></li>
-        <?php if(!isset($_SESSION['user']))?>
-        <li><a href=""><?php echo $_SESSION['user']?></a></li>
+        <?php if(!isset($_SESSION['user'])): ?>
+
+        <?php elseif (isset($_SESSION['user'])):;?>
+          <li><a href=""><?php echo $_SESSION['user']?></a></li>
+        <?php endif;;?>
       </ul>
   </header>

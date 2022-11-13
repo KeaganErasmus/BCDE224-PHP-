@@ -11,12 +11,13 @@ DROP TABLE IF EXISTS Users;
 
 
 CREATE TABLE Product (
+	productID int auto_increment,
     productCode VARCHAR(4) NOT NULL,
     productName VARCHAR(30),
     productPrice DOUBLE(10,2),
     productImage BLOB NOT NULL,
     productDescription VARCHAR(100),
-    PRIMARY KEY (productCode)
+    PRIMARY KEY (productID)
 );
 
 INSERT INTO `Product` (`productCode`, `productName`,`productPrice`, `productImage`, `productDescription`) VALUES
@@ -40,19 +41,17 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Seller (
-    sellerID VARCHAR(4) NOT NULL,
-    sellerFName VARCHAR(30),
-    sellerLName VARCHAR(30),
-    sellerEmail VARCHAR(50),
+    sellerID VARCHAR(4) auto_increment primary key NOT NULL,
+    sellerFName VARCHAR(30) NOT NULL,
+    sellerEmail VARCHAR(50) NOT NULL,
     productsListed VARCHAR(30),
     PRIMARY KEY (sellerID)
 );
 
 CREATE TABLE Buyer (
     buyerID VARCHAR(4) NOT NULL,
-    buyerFName VARCHAR(30),
-    buyerLName VARCHAR(30),
-    buyerEmail VARCHAR(50),
+    buyerFName VARCHAR(30) NOT NULL,
+    buyerEmail VARCHAR(50) NOT NULL,
     productsBought VARCHAR(30),
     PRIMARY KEY (buyerID)
 );

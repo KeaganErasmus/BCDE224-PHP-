@@ -9,12 +9,16 @@ $userType   = $_REQUEST['acc-type'];
 
 // insert into seller table
 if($userType == "seller"){
-    $sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
+    // $sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
+    $stmt = "INSERT INTO Seller (sellerFName, sellerEmail) VALUES('$userName', '$email')";
+    mysqli_query($con, $stmt);
 }
 // insert into buyer table
 if($userType == "buyer"){
-    $sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
+    $stmt = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
 }
+
+$sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
 
 if(mysqli_query($con, $sql)){
     header("location: ../index.php");

@@ -17,6 +17,7 @@ if(isset($_POST['submit'])){
     $password = stripslashes($password);
     $userName = mysqli_real_escape_string($con, $userName);
     $password = mysqli_real_escape_string($con, $password);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     $sql = "SELECT * FROM Users WHERE usersUsername like '$userName' and usersPsw like '$password'";
 
     $result = $con->query($sql);

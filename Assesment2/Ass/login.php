@@ -40,7 +40,7 @@
         </label>
 
         <div class="clearfix">
-          <button action="signup.php" type="button" class="cancelbtn">Signup</button>
+          <button type="button" class="cancelbtn"><a href="signup.php">Signup</a></button>
           <button type="submit" name="submit" class="signupbtn">Login</button>
         </div>
       </div>

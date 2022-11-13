@@ -1,5 +1,5 @@
 <?php
-  $userID = $_GET['usersID'] ?? 1;
+  $userID = $_GET['usersID'] ?? 2;
   foreach($users->getUsersData() as $theUser) : 
     if($theUser['usersID'] == $userID):
 ?>
@@ -20,7 +20,7 @@
       <p>Erasmus</p>
       <br />
       <h2 for="">Email</h2>
-      <p>keaganemail@gmail.com</p>
+      <p><?php echo $theUser['usersEmail']?></p>
       <br />
       <h2 for="">Products Bought</h2>
 

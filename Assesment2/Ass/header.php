@@ -1,5 +1,7 @@
 <?php
 // session_start();
+require('functions.php');
+include('database/connect.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,13 +14,13 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-
-    <?php
-      require('functions.php');
-      ?>
-
   </head>
 
+  <?php
+  $userID = $_GET['usersID'] ?? 2;
+  foreach($users->getUsersData() as $theUser) : 
+    if($theUser['usersID'] == $userID):
+?>
   <header>
       <a href="index.php"><h1>Agora</h1></a>
       <ul>
@@ -26,7 +28,7 @@
         <?php if(!isset($_SESSION['user'])): ?>
           <li><a href="login.php">Login</a></li>
           <!-- Nothing gets added to the user -->
-
+          
           <!-- if the user is logged in show the users name and link it to their account -->
           <?php elseif (isset($_SESSION['user'])):;?>
             <?php if($_SESSION['user'] === 'sellerTest'):;?>
@@ -39,3 +41,7 @@
         <?php endif;;?>
       </ul>
   </header>
+  <?php
+  endif;;
+  endforeach;;
+?>

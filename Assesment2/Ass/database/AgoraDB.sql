@@ -39,6 +39,10 @@ CREATE TABLE Users (
     userType tinytext not null
 );
 
+CREATE TABLE Seller(
+	sellerID int(11)
+);
+
 CREATE TABLE Listing (
     listingID VARCHAR(4) NOT NULL,
     productCode VARCHAR(4),

@@ -1,6 +1,13 @@
 <?php
+  session_start();
  //include header.php file
  include('header.php');
+
+ include_once('functions.php');
+ include_once('database/DBController.php');
+
+//  print_r($_SESSION);
+ var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +19,8 @@
         <p>Please fill in this form to login to an account.</p>
         <hr />
 
-        <label for="email"><b>Email/Username</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required />
+        <label for="usersUsername"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="usersUsername" required />
 
         <label for="psw"><b>Password</b></label>
         <input
@@ -34,7 +41,7 @@
 
         <div class="clearfix">
           <button type="button" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Login</button>
+          <button type="submit" name="submit" class="signupbtn">Login</button>
         </div>
       </div>
     </form>

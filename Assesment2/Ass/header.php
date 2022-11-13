@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,5 +23,8 @@
       <a href="index.php"><h1>Agora</h1></a>
       <ul>
         <li><a href="login.php">Login</a></li>
+        <li><a href="logout.php">Logout</a></li>
+        <?php if(!isset($_SESSION['user']))?>
+        <li><a href=""><?php echo $_SESSION['user']?></a></li>
       </ul>
   </header>

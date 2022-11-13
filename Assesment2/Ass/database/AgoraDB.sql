@@ -20,12 +20,12 @@ CREATE TABLE Product (
 );
 
 INSERT INTO `Product` (`productCode`, `productName`,`productPrice`, `productImage`, `productDescription`) VALUES
-('HA22', 'Hammer', 152.00     ,load_file('C:\xampp\htdocs\Assessment\BCDE224\Assesment2\Ass\img\hammer.png'), 'This is a hammer'),
-('SC22', 'Screwdriver', 122.00,load_file('C:\xampp\htdocs\Assessment\BCDE224\Assesment2\Ass\img\screwdriver.jpeg'), 'This is a screwdriver'),
-('SA22', 'Saw', 122.00        ,load_file('C:/xampp/htdocs/Assessment/BCDE224/Assesment2/Ass/img/saw.jpeg'), 'This is a saw'),
-('Nails', 'Nails', 122.00     ,load_file('C:/xampp/htdocs/Assessment/BCDE224/Assesment2/Ass/img/nails.jpeg'), 'These are some nails'),
-('ME22 Sheet', 'Metal Sheet', 122.00, load_file('C:/xampp/htdocs/Assessment/BCDE224/Assesment2/Ass/img/metalSheet.jpeg'), 'This is a sheet of metal'),
-('2X22', 'Wood(2x4)', 122.00, load_file('C:/xampp/htdocs/Assessment/BCDE224/Assesment2/Ass/img/wood.jpeg'), 'This is a piece of wood');
+('HA22', 'Hammer', 152.00     ,'../Ass/img/hammer.jpg', 'This is a hammer'),
+('SC22', 'Screwdriver', 122.00,'../Ass/img/screwdriver.jpg', 'This is a screwdriver'),
+('SA22', 'Saw', 122.00        ,('../Ass/img/saw.jpg'), 'This is a saw'),
+('Nails', 'Nails', 122.00     ,('../ASs/img/nails.jpg'), 'These are some nails'),
+('ME22 Sheet', 'Metal Sheet', 122.00, ('../Ass/img/metalSheet.jpg'), 'This is a sheet of metal'),
+('2X22', 'Wood(2x4)', 122.00, ('../Ass/img/wood.jpg'), 'This is a piece of wood');
 -- LOAD DATA INFILE 'D:/BCDE214/CVS/product.csv' INTO TABLE Product
 -- FIELDS TERMINATED BY ','
 -- IGNORE 1 ROWS;

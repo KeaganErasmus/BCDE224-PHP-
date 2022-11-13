@@ -39,9 +39,24 @@ CREATE TABLE Users (
     userType tinytext not null
 );
 
-CREATE TABLE Seller(
-	sellerID int(11)
+CREATE TABLE Seller (
+    sellerID VARCHAR(4) NOT NULL,
+    sellerFName VARCHAR(30),
+    sellerLName VARCHAR(30),
+    sellerEmail VARCHAR(50),
+    productsListed VARCHAR(30),
+    PRIMARY KEY (sellerID)
 );
+
+CREATE TABLE Buyer (
+    buyerID VARCHAR(4) NOT NULL,
+    buyerFName VARCHAR(30),
+    buyerLName VARCHAR(30),
+    buyerEmail VARCHAR(50),
+    productsBought VARCHAR(30),
+    PRIMARY KEY (buyerID)
+);
+
 
 CREATE TABLE Listing (
     listingID VARCHAR(4) NOT NULL,

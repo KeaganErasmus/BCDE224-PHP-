@@ -1,7 +1,6 @@
 <?php
-
 // Fetch Users data
-class Users{
+class Users extends DBController{
     public $db = null;
 
     public function __construct(DBController $db){

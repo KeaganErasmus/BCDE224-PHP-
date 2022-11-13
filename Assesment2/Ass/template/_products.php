@@ -1,5 +1,4 @@
 <?php
-
   $productCode = $_GET['productCode'] ?? 1;
   foreach($product->getProductData() as $item) : 
     if($item['productCode'] == $productCode):

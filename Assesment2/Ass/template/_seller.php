@@ -1,3 +1,9 @@
+<?php
+  $userID = $_GET['usersID'] ?? 1;
+  foreach($users->getUsersData() as $theUser) : 
+    if($theUser['usersID'] == $userID):
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,12 +14,13 @@
     <main>
       <h2 for="">First Name</h2>
       <p>Keagan</p>
+      <p><?php echo $theUser['usersUsername']?></p>
       <br />
       <h2 for="">last Name</h2>
       <p>Erasmus</p>
       <br />
       <h2 for="">Email</h2>
-      <p>keaganemail@gmail.com</p>
+      <p><?php echo $theUser['usersEmail']?></p>
       <br />
       <h2 for="">Products Listed</h2>
       <a href="sellPage.php"><button>Add Item</button></a>
@@ -26,3 +33,8 @@
     </main>
   </body>
 </html>
+
+<?php
+  endif;;
+  endforeach;;
+?>

@@ -1,3 +1,8 @@
+<?php
+  $userID = $_GET['usersID'] ?? 1;
+  foreach($users->getUsersData() as $theUser) : 
+    if($theUser['usersID'] == $userID):
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +14,7 @@
     <main>
       <h2 for="">First Name</h2>
       <p>Keagan</p>
+      <p><?php echo $theUser['usersUsername']?></p>
       <br />
       <h2 for="">last Name</h2>
       <p>Erasmus</p>
@@ -23,3 +29,8 @@
     </main>
   </body>
 </html>
+
+<?php
+  endif;;
+  endforeach;;
+?>

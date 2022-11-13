@@ -1,8 +1,6 @@
 <?php
-
 // Fetch product data
-
-class Product{
+class Product extends DBController{
     public $db = null;
 
     public function __construct(DBController $db){

@@ -15,19 +15,27 @@
 
     <?php
       require('functions.php');
-    ?>
+      ?>
 
   </head>
 
   <header>
       <a href="index.php"><h1>Agora</h1></a>
       <ul>
-        <li><a href="login.php">Login</a></li>
         <li><a href="logout.php">Logout</a></li>
         <?php if(!isset($_SESSION['user'])): ?>
+          <li><a href="login.php">Login</a></li>
+          <!-- Nothing gets added to the user -->
 
-        <?php elseif (isset($_SESSION['user'])):;?>
-          <li><a href=""><?php echo $_SESSION['user']?></a></li>
+          <!-- if the user is logged in show the users name and link it to their account -->
+          <?php elseif (isset($_SESSION['user'])):;?>
+            <?php if($_SESSION['user'] === 'sellerTest'):;?>
+            <!-- go to the seller account page -->
+              <li><a href="seller.php"><?php echo $_SESSION['user']?></a></li>
+            <?php elseif($_SESSION['user'] === 'buyerTest'):;?>
+            <!-- go to the buyer account page -->
+              <li><a href="buyer.php"><?php echo $_SESSION['user']?></a></li>
+            <?php endif;;?>
         <?php endif;;?>
       </ul>
   </header>

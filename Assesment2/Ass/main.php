@@ -18,6 +18,7 @@
           <h6><?php echo $item['productName'] ?? "Unkown"?></h6>
           <h6><?php echo '$' .$item['productPrice'] ?? "Unkown"?></h6>
           <h6><?php echo $item['productCode'] ?? "Unkown"?></h6>
+          <p><?php echo $item['productImage']?></p>
           <?php
         }
           ?>       

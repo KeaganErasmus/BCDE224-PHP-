@@ -22,4 +22,28 @@ class Users extends DBController{
 
         return $resultArray;
     }
+
+    public function getUserName($table = 'Users'){
+        $result = $this->db->conn->query("Select usersUsername from {$table}");
+
+        $resultArray = array();
+
+        while($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
+    }
+
+    public function getAdminLogins($table = 'AdminLogin'){
+        $result = $this->db->conn->query("Select * from {$table}");
+
+        $resultArray = array();
+
+        while($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
+    }
 }

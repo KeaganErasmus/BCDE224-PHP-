@@ -1,12 +1,11 @@
 <?php
-  session_start();
+ session_start();
  //include header.php file
  include('header.php');
 
  include_once('functions.php');
  include_once('database/DBController.php');
 
-//  print_r($_SESSION);
 //  var_dump($_SESSION);
 ?>
 

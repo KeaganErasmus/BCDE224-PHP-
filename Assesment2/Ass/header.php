@@ -16,10 +16,17 @@ include('database/connect.php');
     />
   </head>
 
+  <?php if(!isset($_SESSION['user'])): ;?>
+  <header>
+      <a href="index.php"><h1>Agora</h1></a>
+  </header>
+  <?php else: ;?>
+
+  
   <?php
-  $userID = $_GET['usersID'] ?? 2;
+  // var_dump($_SESSION);
   foreach($users->getUsersData() as $theUser) : 
-    if($theUser['usersID'] == $userID):
+    if($theUser['usersUsername'] == $_SESSION['user']):
 ?>
   <header>
       <a href="index.php"><h1>Agora</h1></a>
@@ -31,10 +38,12 @@ include('database/connect.php');
           
           <!-- if the user is logged in show the users name and link it to their account -->
           <?php elseif (isset($_SESSION['user'])):;?>
-            <?php if($_SESSION['user'] === 'sellerTest'):;?>
+            <!-- <li><a href="seller.php"><?php echo $theUser['usersUsername']?></a></li> -->
+
+            <?php if($theUser['userType'] === 'seller'):;?>
             <!-- go to the seller account page -->
               <li><a href="seller.php"><?php echo $_SESSION['user']?></a></li>
-            <?php elseif($_SESSION['user'] === 'buyerTest'):;?>
+            <?php elseif($theUser['userType'] === 'buyer'):;?>
             <!-- go to the buyer account page -->
               <li><a href="buyer.php"><?php echo $_SESSION['user']?></a></li>
             <?php endif;;?>
@@ -44,4 +53,6 @@ include('database/connect.php');
   <?php
   endif;;
   endforeach;;
+
 ?>
+<?php endif;;?>

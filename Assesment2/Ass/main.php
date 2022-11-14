@@ -3,6 +3,7 @@
   include_once('functions.php');
   $product_shuffle = $product->getProductData();
   $users_shuffle = $users->getUsersData();
+  // var_dump($_SESSION['user']);
 ?>
 
 <body>
@@ -18,7 +19,7 @@
           <h6><?php echo $item['productName'] ?? "Unkown"?></h6>
           <h6><?php echo '$' .$item['productPrice'] ?? "Unkown"?></h6>
           <h6><?php echo $item['productCode'] ?? "Unkown"?></h6>
-          <p><?php echo $item['productImage']?></p>
+          <!-- <p><?php echo $item['productImage']?></p> -->
           <?php
         }
           ?>       

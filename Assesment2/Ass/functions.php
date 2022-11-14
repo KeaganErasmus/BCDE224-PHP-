@@ -11,6 +11,7 @@ $db = new DBController;
 // creating objects of the tables
 $product = new Product($db);
 $users = new Users($db);
+$admin = new Users($db);
 
 // print data from database to page
 // var_dump($users->getUsersData());

@@ -1,7 +1,10 @@
 <?php
-  $userID = $_GET['usersID'] ?? 1;
+  // $userID = $_POST['usersUsername'];
+  // $userName = $users->getUserName();
+
+  // var_dump($_SESSION['user']);
   foreach($users->getUsersData() as $theUser) : 
-    if($theUser['usersID'] == $userID):
+    if($theUser['usersUsername'] == $_SESSION['user']):
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +15,8 @@
   </head>
   <body>
     <main>
-      <h2 for="">First Name</h2>
-      <p>Keagan</p>
+      <h2 for="">User Name</h2>
       <p><?php echo $theUser['usersUsername']?></p>
-      <br />
-      <h2 for="">last Name</h2>
-      <p>Erasmus</p>
       <br />
       <h2 for="">Email</h2>
       <p><?php echo $theUser['usersEmail']?></p>

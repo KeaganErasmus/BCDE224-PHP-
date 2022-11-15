@@ -1,9 +1,7 @@
 <?php
-  // session_start();
   include_once('functions.php');
   $product_shuffle = $product->getProductData();
-  $users_shuffle = $users->getUsersData();
-  // var_dump($_SESSION['user']);
+  $users_shuffle = $users->getUsersData('Users');
 ?>
 
 <body>

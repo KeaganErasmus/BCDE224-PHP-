@@ -1,7 +1,7 @@
 <?php
  session_start();
  //include header.php file
- include('header.php');
+ include_once('header.php');
 
  include_once('functions.php');
  include_once('database/DBController.php');

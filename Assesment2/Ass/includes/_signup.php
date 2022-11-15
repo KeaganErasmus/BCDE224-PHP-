@@ -9,6 +9,7 @@ $userType   = $_REQUEST['acc-type'];
 
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
+
 // insert into seller table
 if($userType == "seller"){
     $stmt = "INSERT INTO Seller (sellerFName, sellerEmail) VALUES('$userName', '$email')";
@@ -16,7 +17,8 @@ if($userType == "seller"){
 }
 // insert into buyer table
 if($userType == "buyer"){
-    $stmt = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$hash', '$email', '$userType')";
+    $stmt = "INSERT INTO Buyer (buyerFName, buyerEmail) VALUES('$userName', '$email')";
+    mysqli_query($con, $stmt);
 }
 
 $sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$hash', '$email', '$userType')";

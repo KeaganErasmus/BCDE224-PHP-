@@ -1,8 +1,6 @@
 <?php
-// var_dump($_SESSION);
-  // $userID = $_GET['usersID'] ?? 2;
-  foreach($users->getUsersData() as $theUser) : 
-    if($theUser['usersUsername'] == $_SESSION['user']):
+  foreach($users->getUsersData('Buyer') as $theUser) : 
+    if($theUser['buyerFName'] == $_SESSION['user']):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +12,11 @@
     <aside></aside>
     <main>
       <h2 for="">User Name</h2>
-      <p><?php echo $theUser['usersUsername']?></p>
+      <p><?php echo $theUser['buyerFName']?></p>
       <br />
 
       <h2 for="">Email</h2>
-      <p><?php echo $theUser['usersEmail']?></p>
+      <p><?php echo $theUser['buyerEmail']?></p>
       <br />
       <h2 for="">Products Bought</h2>
 

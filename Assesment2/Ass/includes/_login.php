@@ -17,7 +17,7 @@ $getPass=$getPass2['usersPsw'];
 
 
 if(isset($_POST['submit'])){
-    foreach($users->getUsersData() as $theUser){
+    foreach($users->getUsersData('Users') as $theUser){
         if($theUser['usersUsername'] == $userName && $theUser['usersPsw'] == $getPass){
             $_SESSION['user'] = $userName;
         }
@@ -33,12 +33,6 @@ if(isset($_POST['submit'])){
     $result = $con->query($sql);
     $row = $result->fetch_array(MYSQLI_NUM);
     $count = mysqli_num_rows($result);
-
-    // var_dump("Pass: " . $password . "<br/>");
-    // var_dump("Hash: " . $hash . "<br/>");
-
-    // var_dump("Row: " . $row . "<br/>");
-
   
     if(isset($_SESSION['user'])){
         header("Location: ../index.php");
@@ -48,6 +42,3 @@ if(isset($_POST['submit'])){
     }
 
 }
-
-// var_dump("count ". $count . '<br>');
-var_dump($_SESSION);

@@ -25,7 +25,7 @@ include('database/connect.php');
   
   <?php
   // var_dump($_SESSION);
-  foreach($users->getUsersData() as $theUser) : 
+  foreach($users->getUsersData('Users') as $theUser) : 
     if($theUser['usersUsername'] == $_SESSION['user']):
 ?>
   <header>

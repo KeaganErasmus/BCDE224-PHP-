@@ -14,13 +14,12 @@ DROP TABLE IF EXISTS AdminLogin;
 
 
 CREATE TABLE Product (
-	productID int auto_increment,
     productCode VARCHAR(4) NOT NULL,
     productName VARCHAR(30),
     productPrice DOUBLE(10,2),
     productImage BLOB NOT NULL,
     productDescription VARCHAR(100),
-    PRIMARY KEY (productID)
+    PRIMARY KEY (productCode)
 );
 INSERT INTO `Product` (`productCode`, `productName`,`productPrice`, `productImage`, `productDescription`) VALUES
 ('HA22', 'Hammer', 152.00     ,'../Ass/img/hammer.jpg', 'This is a hammer'),
@@ -34,9 +33,9 @@ SELECT * FROM Product;
 DROP TABLE IF EXISTS Listing;
 CREATE TABLE Listing (
     listingID VARCHAR(4) NOT NULL PRIMARY KEY,
-    productID int,
+    productCode varchar(4),
     sellerID int,
-    foreign key (productID) REFERENCES Product(productID),
+    foreign key (productCode) REFERENCES Product(productCode),
     foreign key (sellerID) REFERENCES Seller(sellerID)
 );
 

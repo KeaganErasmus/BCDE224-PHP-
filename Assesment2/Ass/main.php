@@ -1,7 +1,14 @@
 <?php
   include_once('functions.php');
+  $sellerID = '';
+  $sellerID = $_COOKIE['sellerID'];
+  foreach($users->getUsersData('Seller') as $seller){
+    if($seller['sellerFName'] == $_SESSION['user']){
+      setcookie('sellerID', $seller['sellerID']);
+    }
+  }
   $product_shuffle = $product->getProductData();
-  $users_shuffle = $users->getUsersData('Users');
+  // $users_shuffle = $users->getUsersData('Users');
 ?>
 
 <body>

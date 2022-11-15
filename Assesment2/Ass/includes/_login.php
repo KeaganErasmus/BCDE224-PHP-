@@ -15,11 +15,12 @@ $getPass1=$con->query($query);
 $getPass2=$getPass1-> fetch_array();
 $getPass=$getPass2['usersPsw'];
 
-
 if(isset($_POST['submit'])){
+    $sellerID = $_COOKIE['sellerID'];
     foreach($users->getUsersData('Users') as $theUser){
         if($theUser['usersUsername'] == $userName && $theUser['usersPsw'] == $getPass){
             $_SESSION['user'] = $userName;
+            setcookie('sellerID', $theUser['sellerID']);
         }
     }
     //  MYSQL injection prevention

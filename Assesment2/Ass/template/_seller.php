@@ -1,5 +1,4 @@
 <?php
-  $sellerID = $_COOKIE;
   $sellerID = $_COOKIE['sellerID'];
   foreach($users->getUsersData("Seller") as $theUser) : 
     if($theUser['sellerFName'] == $_SESSION['user']):
@@ -23,10 +22,10 @@
       <h2 for="">Products Listed</h2>
       <a href="sellPage.php"><button>Add Item</button></a>
       <div>
-        <?php foreach($users->getSellerProductData($sellerID) as $item)
-        {
-          echo $item['productName'];
-        }?>
+        <?php foreach($users->getSellerProductData($sellerID) as $item) : ?>
+        <img src="<?php echo $item['productImage']?>" alt="" />
+        <p><?php echo $item['productName'] ?? "Unknown"?></p>
+        <?php endforeach;;?>
       </div>
     </main>
   </body>

@@ -6,7 +6,8 @@ include_once('./functions.php');
 $_SESSION= 'admin';
 
 //check if session is admin
-var_dump($_SESSION);
+// var_dump($_SESSION);
+
 //if is admin show admin page
 
 
@@ -15,7 +16,7 @@ var_dump($_SESSION);
 
 
 foreach($admin->getAdminLogins() as $theAdmin){
-    echo "alo $theAdmin[adminUsername]";
+    echo "<h3>Welcome to your business page! $theAdmin[businessName]</h3>";
 }
 
 ?>

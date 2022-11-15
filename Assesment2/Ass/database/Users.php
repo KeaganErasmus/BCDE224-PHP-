@@ -35,7 +35,7 @@ class Users extends DBController{
         return $resultArray;
     }
 
-    public function getAdminLogins($table = 'AdminLogin'){
+    public function getAdminLogins($table = 'BusinessLogin'){
         $result = $this->db->conn->query("Select * from {$table}");
 
         $resultArray = array();

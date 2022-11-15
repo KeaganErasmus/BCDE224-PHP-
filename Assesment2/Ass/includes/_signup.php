@@ -11,7 +11,6 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 
 // insert into seller table
 if($userType == "seller"){
-    // $sql = "INSERT INTO Users (usersUsername, usersPsw, usersEmail, userType) VALUES('$userName', '$password', '$email', '$userType')";
     $stmt = "INSERT INTO Seller (sellerFName, sellerEmail) VALUES('$userName', '$email')";
     mysqli_query($con, $stmt);
 }

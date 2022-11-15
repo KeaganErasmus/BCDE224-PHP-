@@ -17,7 +17,6 @@ $getPass=$getPass2['usersPsw'];
 
 
 if(isset($_POST['submit'])){
-
     foreach($users->getUsersData() as $theUser){
         if($theUser['usersUsername'] == $userName && $theUser['usersPsw'] == $getPass){
             $_SESSION['user'] = $userName;
@@ -51,4 +50,4 @@ if(isset($_POST['submit'])){
 }
 
 // var_dump("count ". $count . '<br>');
-// var_dump($_SESSION);
+var_dump($_SESSION);

@@ -47,6 +47,11 @@ include('template/_admin.php');
           <button type="button" class="cancelbtn">Cancel</button>
           <button type="submit" class="signupbtn" name="submit">Sign Up</button>
         </div>
+        <br>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn" name="submit">View Sellers</button>
+          <button type="submit" class="signupbtn" name="submit">View Buyers</button>
+        </div>
       </div>
     </form>
   </body>

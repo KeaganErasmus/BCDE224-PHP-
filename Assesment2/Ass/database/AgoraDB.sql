@@ -7,7 +7,10 @@ USE AgoraDB;
 DROP TABLE IF EXISTS Listing;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Product;
-DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS Seller;
+DROP TABLE IF EXISTS Buyer;
+DROP TABLE IF EXISTS AdminLogin;
 
 
 CREATE TABLE Product (
@@ -28,6 +31,15 @@ INSERT INTO `Product` (`productCode`, `productName`,`productPrice`, `productImag
 ('2X22', 'Wood(2x4)', 122.00, ('../Ass/img/wood.jpg'), 'This is a piece of wood');
 SELECT * FROM Product;
 
+DROP TABLE IF EXISTS Listing;
+CREATE TABLE Listing (
+    listingID VARCHAR(4) NOT NULL PRIMARY KEY,
+    productID int,
+    sellerID int,
+    foreign key (productID) REFERENCES Product(productID),
+    foreign key (sellerID) REFERENCES Seller(sellerID)
+);
+
 CREATE TABLE Users (
 	usersID int(11) auto_increment primary key not null,
     usersUsername tinytext not null,
@@ -36,35 +48,38 @@ CREATE TABLE Users (
     userType tinytext not null
 );
 
-DROP TABLE IF EXISTS AdminLogin;
-CREATE TABLE IF NOT EXISTS AdminLogin (
-  adminID int(11) AUTO_INCREMENT NOT NULL ,
-  adminUsername varchar(100) NOT NULL,
-  adminPassword varchar(100) NOT NULL,
-  PRIMARY KEY (adminID)
+DROP TABLE IF EXISTS BusinessLogin;
+CREATE TABLE IF NOT EXISTS BusinessLogin (
+	businessID int primary key,
+    businessName varchar(20),
+    businessEmail varchar(50),
+    businessPsw varchar(50)
 );
 
 CREATE TABLE Seller (
-    sellerID VARCHAR(4) auto_increment primary key NOT NULL,
+    sellerID int auto_increment primary key NOT NULL,
+    usersID int(11),
     sellerFName VARCHAR(30) NOT NULL,
     sellerEmail VARCHAR(50) NOT NULL,
-    productsListed VARCHAR(30),
-    PRIMARY KEY (sellerID)
+    sellerPsw VARCHAR(50) NOT NULL,
+    foreign key (usersID) REFERENCES Users(usersID)
 );
 
 CREATE TABLE Buyer (
     buyerID VARCHAR(4) NOT NULL,
+    usersID int(11),
     buyerFName VARCHAR(30) NOT NULL,
     buyerEmail VARCHAR(50) NOT NULL,
     productsBought VARCHAR(30),
-    PRIMARY KEY (buyerID)
+    PRIMARY KEY (buyerID),
+    foreign key (usersID) REFERENCES Users(usersID)
 );
 
-
-CREATE TABLE Listing (
-    listingID VARCHAR(4) NOT NULL,
-    productCode VARCHAR(4),
-    sellerID VARCHAR(4),
-    buyerID VARCHAR(4),
-    dateListed DATE
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE Orders(
+	orderNum int PRIMARY KEY,
+	listingID varchar(4),
+    buyerID varchar(4),
+    foreign key (listingID) REFERENCES Listing(listingID),
+    foreign key (buyerID) REFERENCES Buyer(buyerID)
 );

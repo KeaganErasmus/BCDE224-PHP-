@@ -1,4 +1,5 @@
 <?php
+  $sellerID = $_COOKIE;
   $sellerID = $_COOKIE['sellerID'];
   foreach($users->getUsersData("Seller") as $theUser) : 
     if($theUser['sellerFName'] == $_SESSION['user']):

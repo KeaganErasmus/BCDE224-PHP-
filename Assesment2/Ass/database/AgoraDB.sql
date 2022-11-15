@@ -32,7 +32,7 @@ SELECT * FROM Product;
 
 DROP TABLE IF EXISTS Listing;
 CREATE TABLE Listing (
-    listingID VARCHAR(4) NOT NULL PRIMARY KEY,
+    listingID int auto_increment  NULL PRIMARY KEY,
     productCode varchar(4),
     sellerID int,
     foreign key (productCode) REFERENCES Product(productCode),

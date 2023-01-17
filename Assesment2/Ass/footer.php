@@ -1,9 +1,0 @@
-<footer>
-      <ul>
-        <li>Ara</li>
-        <li>2022</li>
-        <li>Keagan</li>
-      </ul>
-    </footer>
-  </body>
-</html>
